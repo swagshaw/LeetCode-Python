@@ -9,17 +9,17 @@
 
 class Solution:
     def sortColors(self, nums):
-        red, white, blue = 0, 0, len(nums) - 1
+        red, white, blue = 0, 0, len(nums) - 1  # three pointers
 
         while white <= blue:
-            if nums[white] == 0:
+            if nums[white] == 0:  # if white point red, swap the position of two node.
                 nums[red], nums[white] = nums[white], nums[red]
                 white += 1
                 red += 1
             elif nums[white] == 1:
                 white += 1
             else:
-                nums[white], nums[blue] = nums[blue], nums[white]
+                nums[white], nums[blue] = nums[blue], nums[white]  # if white point blue, swap the position of two node.
                 blue -= 1
 
 
